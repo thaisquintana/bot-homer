@@ -57,7 +57,8 @@ const templateChatMessage = (message, from) =>
   '<div class="timer">' +
   setDate();
 +'</div> ' + '</div>';
-// Crate a Element and append to chat
+
+// Create an element and append to chat
 const InsertTemplateInTheChat = template => {
   const div = document.createElement('div');
   div.innerHTML = template;

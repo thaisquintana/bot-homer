@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100%" height="100%" viewBox="0 0 512 448" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53 (72520) - https://sketchapp.com -->
+    <title>comment-solid</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="comment-solid" fill="#FFFFFF" fill-rule="nonzero">
+            <path d="M256,0 C114.6,0 0,93.1 0,208 C0,257.6 21.4,303 57,338.7 C44.5,389.1 2.7,434 2.2,434.5 C0,436.8 -0.6,440.2 0.7,443.2 C2,446.2 4.8,448 8,448 C74.3,448 124,416.2 148.6,396.6 C181.3,408.9 217.6,416 256,416 C397.4,416 512,322.9 512,208 C512,93.1 397.4,0 256,0 Z" id="Path"></path>
+        </g>
+    </g>
+</svg>

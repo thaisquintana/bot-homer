@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>Bot Homer Simpson</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="chat-column">
+      <div class="chat-head">
+        <h3 class="chat-title">
+          <img src="./imgs/homer.png" alt />
+          Homer Simpson
+        </h3>
+      </div>
+      <div id="chat"></div>
+      <label for="textInput" class="inputOutline">
+        <input
+          id="textInput"
+          class="input responsive-column"
+          autofocus
+          placeholder="Diga alguma coisa"
+          type="text"
+        />
+      </label>
+    </div>
+    <div id="dialog-btn">
+      <button type="button"></button>
+    </div>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="./main.js"></script>
+</html>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100%" height="100%" viewBox="0 0 513 448" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53 (72520) - https://sketchapp.com -->
+    <title>comment-regular</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="comment-regular" fill="#FFFFFF" fill-rule="nonzero">
+            <path d="M257,0 C115.6,0 1,93.1 1,208 C1,255.6 20.9,299.2 53.9,334.3 C39,373.7 8,407.1 7.5,407.5 C0.9,414.5 -0.9,424.7 2.9,433.5 C6.7,442.3 15.4,448 25,448 C86.5,448 135,422.3 164.1,401.7 C193,410.8 224.2,416 257,416 C398.4,416 513,322.9 513,208 C513,93.1 398.4,0 257,0 Z M257,368 C230.3,368 203.9,363.9 178.6,355.9 L155.9,348.7 L136.4,362.5 C122.1,372.6 102.5,383.9 78.9,391.5 C86.2,379.4 93.3,365.8 98.8,351.3 L109.4,323.2 L88.8,301.4 C70.7,282.1 49,250.2 49,208 C49,119.8 142.3,48 257,48 C371.7,48 465,119.8 465,208 C465,296.2 371.7,368 257,368 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>

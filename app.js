@@ -14,7 +14,7 @@ const assistant = new AssistantV1({
   username: process.env.ASSISTANT_USERNAME,
   password: process.env.ASSISTANT_PASSWORD,
   url: 'https://gateway.watsonplatform.net/assistant/api/',
-  version: '2018-8-03'
+  version: '2018-08-03'
 });
 
 app.post('/conversation/', (req, res) => {

@@ -6,7 +6,13 @@ body {
   font-family: Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #eee;
+  background-color: #ffe539;
+}
+
+.bg-bot {
+  background: url('./imgs/bg-simpson-2.jpg') no-repeat;
+  background-size: 100%;
+  height: 100vh;
 }
 
 html {
@@ -16,6 +22,13 @@ html {
 div {
   word-wrap: break-word;
   line-height: 1.25rem;
+}
+
+.logo img {
+  position: absolute;
+  bottom: 182px;
+  left: 12px;
+  width: 92%;
 }
 
 .chat-column {
@@ -109,10 +122,8 @@ div {
   line-height: 1.3125rem;
 }
 
-.from-user .voice {
-  position: relative;
-  right: 30px;
-  display: none;
+.screen-play {
+  width: 300px;
 }
 
 .from-watson .message-inner {
@@ -139,6 +150,12 @@ div {
   width: 0.3125rem;
   height: 1.3125rem;
   line-height: 1.3125rem;
+}
+
+.from-watson video {
+  width: 300px;
+  margin-left: 20px;
+  margin-top: -20px;
 }
 
 #textInput {
@@ -177,7 +194,7 @@ input::placeholder {
   padding: 0 30px 20px 30px;
   z-index: 11;
   position: absolute;
-  bottom: 0;
+  bottom: -16px;
   color: #2b9956;
 }
 
@@ -212,7 +229,7 @@ input::placeholder {
 @media only screen and (min-width: 360px) {
   .chat-column {
     right: 0px;
-    top: 103px;
+    top: 130px;
   }
   #dialog-btn button:before {
     right: 43px;
@@ -222,8 +239,9 @@ input::placeholder {
 
 @media only screen and (min-width: 375px) {
   .chat-column {
-    bottom: 106;
+    bottom: 120px;
     right: 0;
+    height: 66%;
   }
   #dialog-btn button:before {
     right: 42px;
@@ -233,8 +251,10 @@ input::placeholder {
 
 @media only screen and (min-width: 411px) {
   .chat-column {
-    bottom: 63px;
-    right: 4px;
+    bottom: 80px;
+    right: 0px;
+    height: 66%;
+    max-width: 26.4rem;
   }
   #dialog-btn button:before {
     right: 40px;
@@ -244,8 +264,9 @@ input::placeholder {
 
 @media only screen and (min-width: 414px) {
   .chat-column {
-    bottom: 54px;
-    right: 7px;
+    bottom: 71px;
+    right: 0;
+    max-width: 26.4rem;
   }
   #dialog-btn button:before {
     right: 40px;
@@ -254,9 +275,13 @@ input::placeholder {
 }
 
 @media only screen and (min-width: 768px) {
+  .logo img {
+    left: 31px;
+  }
   .chat-column {
-    bottom: -20px !important;
-    right: 7px !important;
+    height: 62%;
+    bottom: -90px !important;
+    right: 12px !important;
   }
   #dialog-btn button:before {
     right: 41px;
@@ -272,11 +297,14 @@ input::placeholder {
 }
 
 @media only screen and (min-width: 1024px) {
+  .logo img {
+    left: 42px;
+  }
   .chat-column {
-    height: 69%;
-    top: 7px;
+    height: 56%;
+    top: 391px !important;
     bottom: 0 !important;
-    right: 17px;
+    right: 7px !important;
   }
   #dialog-btn button:before {
     width: 4.4%;
@@ -284,10 +312,21 @@ input::placeholder {
 }
 
 @media only screen and (min-width: 1280px) {
+  .logo img {
+    display: none;
+  }
+  .chat-column {
+    height: 69.7%;
+    top: 0 !important;
+    bottom: 29px !important;
+  }
+  #dialog-btn {
+    bottom: 21px;
+  }
   #dialog-btn button:before {
     right: 47px;
     height: 68% !important;
-    top: 18px;
+    top: 18px !important;
     bottom: 0px !important;
     width: 2.8%;
   }
@@ -295,28 +334,13 @@ input::placeholder {
 
 @media only screen and (min-width: 1920px) {
   .chat-column {
-    height: 63%;
-    top: 166px;
+    height: 62.9% !important;
+    top: 166px !important;
     right: 15px !important;
   }
   #dialog-btn button:before {
-    right: 41px;
-    top: 15px;
-    width: 2.4%;
+    right: 41px !important;
+    top: 15px !important;
+    width: 2.4% !important;
   }
 }
-
-/* @media only screen and (max-width: 600px) {
-  html {
-    font-size: 14px;
-  }
-  #dialog-btn button:before {
-    right: 41px;
-    top: 34px;
-    width: 2.4%;
-  }
-
-  .chat-column {
-    padding-top: 24px;
-  }
-} */

@@ -1,7 +1,6 @@
 const textInput = document.getElementById('textInput');
 const chat = document.getElementById('chat');
-const audio = document.getElementById('voice');
-
+let mediaTag = '';
 let d,
   h,
   m = 0;
@@ -18,10 +17,8 @@ $(document).ready(function() {
 $('#dialog-btn').click(function() {
   if (state === 'hide') {
     $('.chat-column').show(1000);
-    $('.from-watson audio')
-      .get(0)
-      .play();
     state = 'show';
+    getWatsonMessageAndInsertTemplate();
   } else {
     $('.chat-column').hide(1000);
     state = 'hide';
@@ -41,8 +38,24 @@ function setDate() {
   return '<div>' + d.getHours() + ':' + m + '</div>';
 }
 
-function voiceAutoPlay() {
-  $('.from-user audio').removeAttr('autoplay');
+function fromWatson() {
+  $('.from-watson video').keyup(function() {
+    $('.from-watson video').css(
+      'display',
+      this.value == 'Can i see you' ? 'block' : 'none'
+    );
+    console.log('oi');
+  });
+}
+
+function fromUserMessage() {
+  $('.from-user br').remove('br');
+  $('.from-user audio').remove('audio');
+  $('.from-user video').remove('video');
+  // $('.from-watson video').remove('audio');
+  // $('video').on('start', function() {
+  //   $('#voice').hide();
+  // });
 }
 
 const templateChatMessage = (message, from) =>
@@ -50,10 +63,8 @@ const templateChatMessage = (message, from) =>
       <div class="message-inner">
         <p>${message}</p>
         <br/> 
-        <audio controls class="voice" id="voice" autoplay>
-          <source src="${data}" type="audio/mpeg">
-          <source src="${data}" type="audio/wav">
-        </audio>` +
+        ${mediaTag}
+      ` +
   '<div class="timer">' +
   setDate();
 +'</div> ' + '</div>';
@@ -67,7 +78,7 @@ const InsertTemplateInTheChat = template => {
 };
 
 // Calling server and get the watson output
-const getWatsonMessageAndInsertTemplate = async (text = '') => {
+const getWatsonMessageAndInsertTemplate = async (text = 'start') => {
   const uri = 'http://localhost:4000/conversation/';
   const response = await (await fetch(uri, {
     method: 'POST',
@@ -80,6 +91,12 @@ const getWatsonMessageAndInsertTemplate = async (text = '') => {
     })
   })).json();
   data = response.output.action.data;
+  const arr = data.split('.');
+  mediaTag =
+    arr[arr.length - 1] === 'mp3' || arr[arr.length - 1] === 'wav'
+      ? `<audio controls class="voice" id="voice" autoplay> <source src="${data}" type="audio/wav">
+  <source src="${data}" type="audio/mpeg"> </audio>`
+      : ` <video controls id="video" autoplay> <source src="${data}" type="video/mp4"></video>`;
   context = response.context;
   const template = templateChatMessage(response.output.text, 'watson');
   InsertTemplateInTheChat(template);
@@ -90,12 +107,12 @@ textInput.addEventListener('keydown', event => {
   if (event.keyCode === 13 && textInput.value) {
     // Send the user message
     getWatsonMessageAndInsertTemplate(textInput.value);
+    fromWatson();
+    console.log(fromWatson());
     const template = templateChatMessage(textInput.value, 'user');
     InsertTemplateInTheChat(template);
     // Clear input box for further messages
     textInput.value = '';
-    voiceAutoPlay();
+    fromUserMessage();
   }
 });
-
-getWatsonMessageAndInsertTemplate();

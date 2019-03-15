@@ -38,16 +38,6 @@ function setDate() {
   return '<div>' + d.getHours() + ':' + m + '</div>';
 }
 
-function fromWatson() {
-  $('.from-watson video').keyup(function() {
-    $('.from-watson video').css(
-      'display',
-      this.value == 'Can i see you' ? 'block' : 'none'
-    );
-    console.log('oi');
-  });
-}
-
 function fromUserMessage() {
   $('.from-user br').remove('br');
   $('.from-user audio').remove('audio');
@@ -79,14 +69,15 @@ const InsertTemplateInTheChat = template => {
 
 // Calling server and get the watson output
 const getWatsonMessageAndInsertTemplate = async (text = 'start') => {
-  const uri = 'http://localhost:4000/conversation/';
+  // const uri = 'http://localhost:4000/conversation/';
+  const uri = 'https://bot-monsanto.mybluemix.net/fox/';
   const response = await (await fetch(uri, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      text,
+      input: { text },
       context
     })
   })).json();
@@ -107,8 +98,6 @@ textInput.addEventListener('keydown', event => {
   if (event.keyCode === 13 && textInput.value) {
     // Send the user message
     getWatsonMessageAndInsertTemplate(textInput.value);
-    fromWatson();
-    console.log(fromWatson());
     const template = templateChatMessage(textInput.value, 'user');
     InsertTemplateInTheChat(template);
     // Clear input box for further messages

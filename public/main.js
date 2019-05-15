@@ -41,11 +41,7 @@ function setDate() {
 function fromUserMessage() {
   $('.from-user br').remove('br');
   $('.from-user audio').remove('audio');
-  $('.from-user video').remove('video');
-  // $('.from-watson video').remove('audio');
-  // $('video').on('start', function() {
-  //   $('#voice').hide();
-  // });
+  $('.from-user video').remove('video');s
 }
 
 const templateChatMessage = (message, from) =>
@@ -69,7 +65,10 @@ const InsertTemplateInTheChat = template => {
 
 // Calling server and get the watson output
 const getWatsonMessageAndInsertTemplate = async (text = 'start') => {
-  // const uri = 'http://localhost:4000/conversation/';
+  // use this url when you dont have an url for production
+  // const uri = 'https://localhost:4000/conersation';
+
+  // use this url when you have an external url built with credentials to use on production
   const uri = 'https://bot-monsanto.mybluemix.net/fox/';
   const response = await (await fetch(uri, {
     method: 'POST',

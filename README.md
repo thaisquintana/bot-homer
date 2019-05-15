@@ -14,3 +14,19 @@ Remember that to run properly the application, you need to update the version of
 
 Your Localhost's port is 4000
 `run the command: node app.js`
+
+## Scritp to talk to Homer:
+
+- Where are your pants?
+- Hey, what do you think of Flanders?
+- For what would you like to make a toast?
+- I do not like Brazil
+- do you have plans for tonight, homer?
+- If you could have a wish, what woud wish for?
+- what's your name?
+- Homer, are you feeling ok?
+- how's your beer?
+- Homer, can we talk?
+- do you like st patricks day?
+- You're looking handsome, Homer
+- Bye, homer
